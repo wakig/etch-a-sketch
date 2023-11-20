@@ -54,6 +54,7 @@ function resize(n) {
                     blue = Math.floor(Math.random() * 256);
                     green = Math.floor(Math.random() * 256);
                     square.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
+                    opacity = 0.0;
                 }
             });
             col.appendChild(square);
