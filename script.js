@@ -43,10 +43,11 @@ function resize(n) {
         for (let j=0; j<n; j++) {
             const square = document.createElement('div');
             square.className = 'row';
-            // square.textContent = 'a';
+            let opacity = 0.0;
             square.addEventListener('mouseover', () => {
                 if (mode === 'black') {
-                    square.style.backgroundColor = 'black';
+                    opacity = Math.min(opacity + 0.1, 1.0);
+                    square.style.backgroundColor = `rgba(0,0,0,${opacity})`;
                 }
                 else {
                     red = Math.floor(Math.random() * 256);
