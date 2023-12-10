@@ -1,25 +1,26 @@
-// add 'resize' button to body
 const body = document.querySelector('body');
+
+// mode for switching between black and RGB
+let mode = 'black';
+const color_button = document.createElement('button');
+color_button.textContent = 'Paint: Black';
+color_button.addEventListener('click', toggleColor);
+body.appendChild(color_button);
+
+// add 'resize' button to body
 const button = document.createElement('button');
 button.textContent = 'Resize';
 button.addEventListener('click', setGridSize);
 body.appendChild(button);
 
-// mode for switching between black and RGB
-let mode = 'black';
-const color_button = document.createElement('button');
-color_button.textContent = 'Mode: Black';
-color_button.addEventListener('click', toggleColor);
-body.appendChild(color_button);
-
 function toggleColor(e) {
     if (mode === 'black') {
         mode = 'rgb';
-        e.currentTarget.textContent = 'Mode: RGB';
+        e.currentTarget.textContent = 'Paint: RGB';
     }
     else {
         mode = 'black';
-        e.currentTarget.textContent = 'Mode: Black';
+        e.currentTarget.textContent = 'Paint: Black';
     }
 }
 
